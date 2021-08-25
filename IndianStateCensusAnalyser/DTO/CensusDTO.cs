@@ -7,17 +7,17 @@ namespace IndianStateCensusAnalyser.DTO
 {
     public class CensusDTO
     {
-        public string state;
-        public long population;
-        public long area;
-        public long density;
-       
-        public CensusDTO(CensusDataDTO stateDataDao)
+        public int serialNumber;
+        public string stateName;
+        public int tin;
+        public string stateCode;
+
+        public CensusDTO(StateCodeDAO stateCodeDao)
         {
-            this.state = stateDataDao.state;
-            this.population = stateDataDao.population;
-            this.area = stateDataDao.area;
-            this.density = stateDataDao.density;
+            this.serialNumber = stateCodeDao.serialNumber;
+            this.stateName = stateCodeDao.stateName;
+            this.tin = stateCodeDao.tin;
+            this.stateCode = stateCodeDao.stateCode;
         }
     }
 }

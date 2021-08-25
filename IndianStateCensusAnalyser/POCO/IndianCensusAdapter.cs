@@ -21,8 +21,8 @@ namespace IndianStateCensusAnalyser.POCO
                     throw new CensusAnalyserException("File Contains Wrong Delimeter", CensusAnalyserException.ExceptionType.INCORRECT_DELIMETER);
                 }
                 string[] column = data.Split(",");
-                if (csvFilepath.Contains("IndiaStateCensusData.csv"))
-                    dataMap.Add(column[1], new CensusDTO(new CensusDataDTO(column[0], column[1], column[2], column[3])));
+                if (csvFilepath.Contains("IndiaStateCode.csv"))
+                    dataMap.Add(column[1], new CensusDTO(new StateCodeDAO(column[0], column[1], column[2], column[3])));
             }
             return dataMap.ToDictionary(p=> p.Key, p=>p.Value);
         }
